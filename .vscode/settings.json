@@ -1,0 +1,186 @@
+{
+  // "background.panel": {
+  //  "useFront": true,
+  //  "style": {
+  //      "background-position": "center",
+  //      "background-size": "cover",
+  //      "opacity": 0.2
+  //  },
+  //  "images": [
+  //      "file:///E:/scanf/undress/syq10.jpg"
+  //  ],
+  //  "interval": 0,
+  //  "random": false
+  // },
+  // "background.sidebar": {
+  //  "useFront": true,
+  //  "style": {
+  //      "background-position": "center",
+  //      "background-size": "cover",
+  //      "opacity": 0.3
+  //  },
+  //  "images": [
+  //      "file:///E:/scanf/undress/wsr1.jpg"
+  //  ],
+  //  "interval": 0,
+  //  "random": false
+  // },
+  // "background.fullscreen": {
+  //  "useFront": true,
+  //  "style": {
+  //      "background-position": "center",
+  //      "background-size": "cover",
+  //      "opacity": 0.1
+  //  },
+  //  "images": [
+  //      "file:///E:/scanf/undress/lsq3.png"
+  //  ],
+  //  "interval": 0,
+  //  "random": false
+  // },
+  "files.encoding": "utf8", //设置汉字编码标准，如果有乱码可以修改这两处
+  "[json]": {
+    "files.encoding": "utf8"
+  },
+  "files.defaultLanguage": "cpp", // ctrl+N新建文件后默认的语言
+  "editor.formatOnType": false, // 输入分号(C/C++的语句结束标识)后自动格式化当前这一行的代码
+  "files.autoSave": "onFocusChange", //自动保存
+  "editor.formatOnSave": false,
+  "editor.formatOnPaste": false,
+  "editor.acceptSuggestionOnEnter": "on", // tab接受Intellisense
+  "editor.minimap.enabled": true,
+  "C_Cpp.autocomplete": "default",
+  "[cpp]": {
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    },
+    "editor.wordBasedSuggestions": "matchingDocuments",
+    "editor.formatOnType": false,
+  },
+  "[c]": {
+    "editor.quickSuggestions": {
+      "comments": "on",
+      "strings": "on",
+      "other": "on"
+    },
+    "editor.wordBasedSuggestions": "matchingDocuments",
+    "editor.formatOnType": false,
+  },
+  "code-runner.runInTerminal": true, // 设置成false会在“输出”中输出，无法输入
+  "code-runner.executorMap": {
+    //"c": "cd $dir && gcc $fileName -o $fileNameWithoutExt.exe -Wall -g -O2 -static-libgcc  -fexec-charset=GBK && $dir$fileNameWithoutExt",
+    //"cpp": "cd $dir && g++ $fileName -o $fileNameWithoutExt.exe -Wall -g -O2 -static-libgcc  -fexec-charset=UTF-8 && $dir$fileNameWithoutExt"
+    "c": "clear && cd $dir && gcc $fileName -o $fileNameWithoutExt.exe -Wall -g -O2 -static-libgcc  -fexec-charset=GBK -std=gnu11  && $dir$fileNameWithoutExt",
+    "cpp": "clear && cd $dir && g++ $fileName -o $fileNameWithoutExt.exe -Wall -g -O2 -static-libgcc  -fexec-charset=GBK -std=c++17  && $dir$fileNameWithoutExt"
+  }, // 右键run code时运行的命令；未注释的仅适用于PowerShell（Win10默认），文件名中有空格也可以编译运行；注释掉的适用于cmd（win7默认），PS和bash也能用，但文件名中有空格时无法运行
+  "code-runner.saveFileBeforeRun": true, // run code前保存
+  "code-runner.preserveFocus": true, // 若为false，run code后光标会聚焦到终端上。如果需要频繁输入数据可设为false
+  "code-runner.clearPreviousOutput": false, // 每次run code前清空属于code runner的终端消息，默认false
+  "code-runner.ignoreSelection": true, // 默认为false，效果是鼠标选中一块代码后可以单独执行，但C是编译型语言，不适合这样用
+  "C_Cpp.clang_format_sortIncludes": true,
+  "files.associations": {
+    "array": "cpp",
+    "atomic": "cpp",
+    "*.tcc": "cpp",
+    "cctype": "cpp",
+    "clocale": "cpp",
+    "cmath": "cpp",
+    "cstdarg": "cpp",
+    "cstddef": "cpp",
+    "cstdint": "cpp",
+    "cstdio": "cpp",
+    "cstdlib": "cpp",
+    "cwchar": "cpp",
+    "cwctype": "cpp",
+    "deque": "cpp",
+    "unordered_map": "cpp",
+    "vector": "cpp",
+    "exception": "cpp",
+    "algorithm": "cpp",
+    "memory": "cpp",
+    "memory_resource": "cpp",
+    "optional": "cpp",
+    "string": "cpp",
+    "string_view": "cpp",
+    "system_error": "cpp",
+    "tuple": "cpp",
+    "type_traits": "cpp",
+    "utility": "cpp",
+    "fstream": "cpp",
+    "initializer_list": "cpp",
+    "iosfwd": "cpp",
+    "iostream": "cpp",
+    "istream": "cpp",
+    "limits": "cpp",
+    "new": "cpp",
+    "ostream": "cpp",
+    "sstream": "cpp",
+    "stdexcept": "cpp",
+    "streambuf": "cpp",
+    "typeinfo": "cpp",
+    "stdio.h": "c",
+    "barrier": "c",
+    "bitset": "c",
+    "any": "cpp",
+    "bit": "cpp",
+    "cfenv": "cpp",
+    "charconv": "cpp",
+    "chrono": "cpp",
+    "cinttypes": "cpp",
+    "codecvt": "cpp",
+    "compare": "cpp",
+    "complex": "cpp",
+    "concepts": "cpp",
+    "condition_variable": "cpp",
+    "coroutine": "cpp",
+    "csetjmp": "cpp",
+    "csignal": "cpp",
+    "cstring": "cpp",
+    "ctime": "cpp",
+    "cuchar": "cpp",
+    "forward_list": "cpp",
+    "list": "cpp",
+    "map": "cpp",
+    "set": "cpp",
+    "unordered_set": "cpp",
+    "expected": "cpp",
+    "functional": "cpp",
+    "iterator": "cpp",
+    "numeric": "cpp",
+    "random": "cpp",
+    "ratio": "cpp",
+    "regex": "cpp",
+    "source_location": "cpp",
+    "format": "cpp",
+    "future": "cpp",
+    "generator": "cpp",
+    "iomanip": "cpp",
+    "latch": "cpp",
+    "mutex": "cpp",
+    "numbers": "cpp",
+    "print": "cpp",
+    "ranges": "cpp",
+    "scoped_allocator": "cpp",
+    "semaphore": "cpp",
+    "shared_mutex": "cpp",
+    "span": "cpp",
+    "spanstream": "cpp",
+    "stacktrace": "cpp",
+    "stdfloat": "cpp",
+    "stop_token": "cpp",
+    "syncstream": "cpp",
+    "text_encoding": "cpp",
+    "thread": "cpp",
+    "typeindex": "cpp",
+    "valarray": "cpp",
+    "variant": "cpp"
+  }, // 格式化时调整include的顺序（按字母排序）
+  "workbench.tree.indent":15,//代码树缩进宽度
+  "workbench.tree.renderIndentGuides": "always",//显示辅助线
+  "workbench.colorCustomizations": {
+    "tree.indentGuidesStroke":"#FFFFFF"//辅助线颜色
+  },
+  "C_Cpp.errorSquiggles": "disabled",
+}

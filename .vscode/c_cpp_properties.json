@@ -1,0 +1,17 @@
+{
+    "configurations": [
+        {
+            "name": "win",
+            "includePath": [ //设置include检索路径
+                "${workspaceFolder}/**",
+                "d:/programs/mingw/include"
+            ],
+            "defines": [],
+            "compilerPath": "D:/Programs/MinGW/bin/g++.exe",
+            "cStandard": "gnu11", //设置语言标准
+            "cppStandard": "c++17",
+            "intelliSenseMode": "clang-x64"
+        }
+    ],
+    "version": 4
+}
