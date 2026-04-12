@@ -7,6 +7,7 @@ author:fatelism
 #include <time.h>
 #include <conio.h>
 #include <cstring>
+#include <Windows.h>
 
 void init(){
     std::cout << "\033[1;31m" << "Welcome to 2048 " << "\033[0m" << std::endl;
@@ -163,6 +164,40 @@ class board{
                     }
                 }
             }
+
+            else if(keyboardInput=='d'){
+
+                for(int line=1;line<=4;line++){
+                    for(int column=4;column>=1;column--){
+                        for(int aimcolumn=4;aimcolumn>column;aimcolumn--){
+                            if(!occupyPoint[line][aimcolumn]&&occupyPoint[line][column]){
+                                occupyPoint[line][aimcolumn]=occupyPoint[line][column];
+                                occupyPoint[line][column]=0;
+                            }
+                        }
+                    }
+                }
+
+                for(int line=1;line<=4;line++){
+                    for(int column=3;column>=1;column--){
+                       if(occupyPoint[line][column]==occupyPoint[line][column+1]){
+                            occupyPoint[line][column+1]*=2;
+                            occupyPoint[line][column]=0;
+                        }
+                    }
+                }
+
+                for(int line=1;line<=4;line++){
+                    for(int column=4;column>=1;column--){
+                        for(int aimcolumn=4;aimcolumn>column;aimcolumn--){
+                            if(!occupyPoint[line][aimcolumn]&&occupyPoint[line][column]){
+                                occupyPoint[line][aimcolumn]=occupyPoint[line][column];
+                                occupyPoint[line][column]=0;
+                            }
+                        }
+                    }
+                }
+            }
         }
 }gameMainBoard;
 int main(){
@@ -178,6 +213,7 @@ int main(){
     while(1){
         gameMainBoard.blockSpawn();
         gameMainBoard.printBoard();
+        Sleep(200);
         gameMainBoard.blockMove();
     }
 }
