@@ -198,6 +198,76 @@ class board{
                     }
                 }
             }
+
+            else if(keyboardInput=='w'){
+
+                for(int column=1;column<=4;column++){
+                    for(int line=1;line<=4;line++){
+                        for(int aimline=1;aimline<line;aimline++){
+                            if(!occupyPoint[aimline][column]&&occupyPoint[line][column]){
+                                occupyPoint[aimline][column]=occupyPoint[line][column];
+                                occupyPoint[line][column]=0;
+                            }
+                        }
+                    }
+                }
+
+                for(int column=1;column<=4;column++){
+                    for(int line=2;line<=4;line++){
+                        if(occupyPoint[line-1][column]==occupyPoint[line][column]){
+                            occupyPoint[line-1][column]*=2;
+                            occupyPoint[line][column]=0;
+                        }
+                    }
+                }
+
+                for(int column=1;column<=4;column++){
+                    for(int line=1;line<=4;line++){
+                        for(int aimline=1;aimline<line;aimline++){
+                            if(!occupyPoint[aimline][column]&&occupyPoint[line][column]){
+                                occupyPoint[aimline][column]=occupyPoint[line][column];
+                                occupyPoint[line][column]=0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            else if(keyboardInput=='s'){
+
+                for(int column=1;column<=4;column++){
+                    for(int line=4;line>=1;line--){
+                        for(int aimline=4;aimline>line;aimline--){
+                            if(!occupyPoint[aimline][column]&&occupyPoint[line][column]){
+                                occupyPoint[aimline][column]=occupyPoint[line][column];
+                                occupyPoint[line][column]=0;
+                            }
+                        }
+                    }
+                }
+
+                for(int column=1;column<=4;column++){
+                    for(int line=3;line>=1;line--){
+                        if(occupyPoint[line+1][column]==occupyPoint[line][column]){
+                            occupyPoint[line+1][column]*=2;
+                            occupyPoint[line][column]=0;
+                        }
+                    }
+                }
+
+                for(int column=1;column<=4;column++){
+                    for(int line=4;line>=1;line--){
+                        for(int aimline=4;aimline>line;aimline--){
+                            if(!occupyPoint[aimline][column]&&occupyPoint[line][column]){
+                                occupyPoint[aimline][column]=occupyPoint[line][column];
+                                occupyPoint[line][column]=0;
+                            }
+                        }
+                    }
+                }
+            }
+
+            else ;//this place should add a judge if user enter an invaild key
         }
 }gameMainBoard;
 int main(){
