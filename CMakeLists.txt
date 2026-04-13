@@ -2,4 +2,20 @@
 
 project(2048)
 
-add_executable(2048 main.cpp board.h)
+set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD_REQUIRED ON)
+
+if(MSVC)
+    set(variables 
+        CMAKE_CXX_FLAGS_RELEASE 
+        CMAKE_CXX_FLAGS_DEBUG)
+    foreach(variable ${variables})
+        if(${variable} MATCHES "/MD")
+            string(REGEX REPLACE "/MD" "/MT" ${variable} "${${variable}}")
+        endif()
+    endforeach()
+endif()
+
+file(GLOB_RECURSE SOURCES "*.cpp" "*.h")
+
+add_executable(2048 ${SOURCES})
