@@ -6,17 +6,9 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="D:\codeC\cpp_project\2048\board.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
     <CustomBuild Include="D:\codeC\cpp_project\2048\CMakeLists.txt" />
   </ItemGroup>
   <ItemGroup>
-    <Filter Include="Header Files">
-      <UniqueIdentifier>{E12A7C6C-17E8-39EA-B56E-539F3A9B7CEC}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Source Files">
       <UniqueIdentifier>{6842715B-A195-36BC-A5F8-1B5AFB20AB70}</UniqueIdentifier>
     </Filter>

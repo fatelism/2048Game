@@ -16,6 +16,5 @@ if(MSVC)
     endforeach()
 endif()
 
-file(GLOB_RECURSE SOURCES "*.cpp" "*.h")
 
-add_executable(2048 ${SOURCES})
+add_executable(2048 main.cpp)
