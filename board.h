@@ -121,6 +121,9 @@ class board{
         }
 
         void printBoard(){
+            // std::cout << "\033[H\033[2J";
+            std::cout << "\x1b[2J\x1b[H";
+            std::cout.flush();
             std::cout<<BOLD<<"╔════════════════════════════╗";
             std::cout<<RESETCOLOR<<"                score: "<<totalScore<<std::endl;
 
