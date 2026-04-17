@@ -1,3 +1,5 @@
+#pragma once
+
 #include <iostream>
 
 #define RESETCOLOR "\033[0m"

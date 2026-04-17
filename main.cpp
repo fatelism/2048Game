@@ -9,54 +9,25 @@ author:fatelism
 #include <cstring>
 #include <Windows.h>
 #include "board.h"
-
-void init(){
-    std::cout << "     \033[1;31m" << "Welcome to 2048 " << "\033[0m" << std::endl;
-    system("pause");
-}
-
+#include "menu.h"
 
 board gameMainBoard;
-
 
 int main(){
     
     init();
-    
     srand(time(NULL));
 
-    // gameMainBoard.setPoint(1,1,8192);
-    // gameMainBoard.setPoint(1,2,8192);
-    // gameMainBoard.setPoint(1,3,8192);
-    // gameMainBoard.setPoint(1,4,8192);
-    // gameMainBoard.setPoint(2,1,2048);
-    // gameMainBoard.setPoint(2,2,1000);
-    // gameMainBoard.setPoint(2,3,2000);
-    // gameMainBoard.setPoint(2,4,3000);
+
     while(1){
-        gameMainBoard.blockSpawn();
-        gameMainBoard.printBoard();
+        int mode=printMenu();
 
-        if(gameMainBoard.checkGameEnd()==1){
-            
-            gameMainBoard.updateMaximumScore();
+        if(mode==0)return 0;
+        else if(mode==1)gameMode1(gameMainBoard); 
+        else if(mode==2)gameMode2(gameMainBoard);
+        else if(mode==3)gameIntroduction();
 
-            if(gameMainBoard.gameEnd()==1)break;
-            else{
-                restart:
-                gameMainBoard.gameRestart();
-                continue;
-            }
-        }
-
-        // Sleep(200);
-
-        int inputStatus=gameMainBoard.blockMove();
-        if(inputStatus==-1)break;
-        else if(inputStatus==-2)goto restart;
-        else gameMainBoard.addScore(inputStatus);
-
-        
+        system("cls");
     }
     
 }
