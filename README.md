@@ -2,7 +2,7 @@
       
 创新玩法正在开发中      
 
-运行run:   
+运行run:(CMD)   
 (mkdir build)    
 cd build  
 cmake ..    
