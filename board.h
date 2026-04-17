@@ -2,6 +2,7 @@
 #include <conio.h>
 #include <iostream>
 #include <cstdlib>
+#include <fstream>
 #include "color.h"
 
 int countDigit(int x){
@@ -125,7 +126,8 @@ class board{
             std::cout << "\x1b[2J\x1b[H";
             std::cout.flush();
             std::cout<<BOLD<<"╔════════════════════════════╗";
-            std::cout<<RESETCOLOR<<"                score: "<<totalScore<<std::endl;
+            std::cout<<RESETCOLOR<<"          score: "<<totalScore;
+            std::cout<<"      maximum score: "<<getMaximumScore()<<std::endl;
 
             for(int line=1;line<=4;line++){
                 printBlock(line);
@@ -338,5 +340,48 @@ class board{
             }
 
             return 1;
+        }
+
+        void gameRestart(){
+            totalScore=0;
+            for(int i=0;i<6;i++)
+                for(int j=0;j<6;j++)
+                    occupyPoint[i][j]=0;
+        }
+
+        int gameEnd(){
+            std::cout<<"Game is end.\nYour final score: ";
+            printScore();
+            std::cout<<std::endl;
+            std::cout<<"Press 'R' to restart."<<std::endl;
+            char input=_getch();
+            if(input=='r')return 0;
+            else return 1;
+        }
+
+        int getMaximumScore(){
+            int maximumScore=0;
+            std::ifstream fin("maximumScore.txt");
+            if(fin.is_open()){
+                fin>>maximumScore;
+            }
+            return maximumScore;
+        }
+
+        void updateMaximumScore(){
+            int maximumScore=0;
+            std::ifstream fin("maximumScore.txt");
+            if(fin.is_open()){
+                fin>>maximumScore;
+            }
+
+            if(maximumScore<totalScore){
+                std::ofstream fout("maximumScore.txt",std::ios::trunc);
+                if(fout.is_open()){
+                    fout<<totalScore;
+                }
+                return;
+            }
+            return;
         }
 };

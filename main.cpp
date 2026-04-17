@@ -18,12 +18,6 @@ void init(){
 
 board gameMainBoard;
 
-void gameEnd(){
-    std::cout<<"Game is end.\nYour final score: ";
-    gameMainBoard.printScore();
-    std::cout<<std::endl;
-    system("pause");
-}
 
 int main(){
     
@@ -31,12 +25,30 @@ int main(){
     
     srand(time(NULL));
 
+    // gameMainBoard.setPoint(1,1,8192);
+    // gameMainBoard.setPoint(1,2,8192);
+    // gameMainBoard.setPoint(1,3,8192);
+    // gameMainBoard.setPoint(1,4,8192);
+    // gameMainBoard.setPoint(2,1,2048);
+    // gameMainBoard.setPoint(2,2,1000);
+    // gameMainBoard.setPoint(2,3,2000);
+    // gameMainBoard.setPoint(2,4,3000);
     while(1){
         gameMainBoard.blockSpawn();
         gameMainBoard.printBoard();
-        if(gameMainBoard.checkGameEnd()==1)break;
 
-        Sleep(200);
+        if(gameMainBoard.checkGameEnd()==1){
+            
+            gameMainBoard.updateMaximumScore();
+
+            if(gameMainBoard.gameEnd()==1)break;
+            else{
+                gameMainBoard.gameRestart();
+                continue;
+            }
+        }
+
+        // Sleep(200);
 
         int inputStatus=gameMainBoard.blockMove();
         if(inputStatus==-1)break;
@@ -44,5 +56,5 @@ int main(){
 
         
     }
-    gameEnd();
+    
 }
