@@ -43,6 +43,7 @@ int main(){
 
             if(gameMainBoard.gameEnd()==1)break;
             else{
+                restart:
                 gameMainBoard.gameRestart();
                 continue;
             }
@@ -52,6 +53,7 @@ int main(){
 
         int inputStatus=gameMainBoard.blockMove();
         if(inputStatus==-1)break;
+        else if(inputStatus==-2)goto restart;
         else gameMainBoard.addScore(inputStatus);
 
         

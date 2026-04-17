@@ -90,30 +90,35 @@ class board{
         }
 
         void printBlock(int line){
+            std::cout<<"              ";
             std::cout<<BOLD<<"║"<<RESETCOLOR;
                         for(int column=1;column<=4;column++){
                             printBlockUp(line,column);
                         }
                                          std::cout<<BOLD<<"║"<<RESETCOLOR<<std::endl;
 
+            std::cout<<"              ";
             std::cout<<BOLD<<"║"<<RESETCOLOR;
                         for(int column=1;column<=4;column++){
                             printBlockMid(line,column);
                         }
                                          std::cout<<BOLD<<"║"<<RESETCOLOR<<std::endl;
             
+            std::cout<<"              ";
             std::cout<<BOLD<<"║"<<RESETCOLOR;
                         for(int column=1;column<=4;column++){
                             printBlockNumber(line,column);
                         }
                                          std::cout<<BOLD<<"║"<<RESETCOLOR<<std::endl;
-
+            
+                                         std::cout<<"              ";
             std::cout<<BOLD<<"║"<<RESETCOLOR;
                         for(int column=1;column<=4;column++){
                             printBlockMid(line,column);
                         }
                                          std::cout<<BOLD<<"║"<<RESETCOLOR<<std::endl;
-                                         
+                 
+            std::cout<<"              ";
             std::cout<<BOLD<<"║"<<RESETCOLOR;
                         for(int column=1;column<=4;column++){
                             printBlockDown(line,column);
@@ -125,7 +130,7 @@ class board{
             // std::cout << "\033[H\033[2J";
             std::cout << "\x1b[2J\x1b[H";
             std::cout.flush();
-            std::cout<<BOLD<<"╔════════════════════════════╗";
+            std::cout<<BOLD<<"              ╔════════════════════════════╗";
             std::cout<<RESETCOLOR<<"          score: "<<totalScore;
             std::cout<<"      maximum score: "<<getMaximumScore()<<std::endl;
 
@@ -133,7 +138,7 @@ class board{
                 printBlock(line);
             }
 
-            std::cout<<BOLD<<"╚════════════════════════════╝"<<RESETCOLOR<<std::endl;
+            std::cout<<BOLD<<"              ╚════════════════════════════╝"<<RESETCOLOR<<std::endl;
         }
         
         void blockSpawn(){
@@ -302,6 +307,10 @@ class board{
             }
             else if(keyboardInput=='q'){
                 return -1;
+            }
+
+            else if(keyboardInput=='r'){
+                return -2;
             }
 
             else goto userInput;
